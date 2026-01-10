@@ -1,6 +1,6 @@
 ﻿namespace VisualParadigmKeygen
 {
-    partial class FHowToUse
+    partial class HowToUse
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             SuspendLayout();
             // 
-            // FHowToUse
+            // HowToUse
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(334, 311);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FHowToUse";
+            Name = "HowToUse";
             StartPosition = FormStartPosition.CenterParent;
             Text = "How To Use";
             ResumeLayout(false);

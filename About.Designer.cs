@@ -1,6 +1,6 @@
 ﻿namespace VisualParadigmKeygen
 {
-    partial class FAbout
+    partial class About
     {
         /// <summary>
         /// Required designer variable.
@@ -69,7 +69,7 @@
             LbFooter.Size = new Size(0, 15);
             LbFooter.TabIndex = 3;
             // 
-            // FAbout
+            // About
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -80,7 +80,7 @@
             Controls.Add(LbName);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FAbout";
+            Name = "About";
             StartPosition = FormStartPosition.CenterParent;
             Text = "About";
             Load += FAbout_Load;

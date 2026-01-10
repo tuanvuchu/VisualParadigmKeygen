@@ -1,8 +1,8 @@
 ﻿namespace VisualParadigmKeygen
 {
-    public partial class FHowToUse : Form
+    public partial class HowToUse : Form
     {
-        public FHowToUse()
+        public HowToUse()
         {
             InitializeComponent();
         }

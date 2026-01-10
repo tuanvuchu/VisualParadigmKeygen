@@ -1,8 +1,8 @@
 ﻿namespace VisualParadigmKeygen
 {
-    public partial class FAbout : Form
+    public partial class About : Form
     {
-        public FAbout()
+        public About()
         {
             InitializeComponent();
         }

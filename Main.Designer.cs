@@ -1,6 +1,6 @@
 ﻿namespace VisualParadigmKeygen
 {
-    partial class FMain
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -46,6 +46,7 @@
             // 
             // CbbEdition
             // 
+            CbbEdition.Cursor = Cursors.Hand;
             CbbEdition.DropDownStyle = ComboBoxStyle.DropDownList;
             CbbEdition.FormattingEnabled = true;
             CbbEdition.Items.AddRange(new object[] { "Standard", "Professional", "Enterprise" });
@@ -64,7 +65,7 @@
             BtnGenerateKey.TabIndex = 1;
             BtnGenerateKey.Text = "Generate";
             BtnGenerateKey.UseVisualStyleBackColor = true;
-            BtnGenerateKey.Click += GenerateKey_Click;
+            BtnGenerateKey.Click += BtnGenerateKey_Click;
             // 
             // TbOutput
             // 
@@ -88,9 +89,9 @@
             // 
             // CbbVersion
             // 
+            CbbVersion.Cursor = Cursors.Hand;
             CbbVersion.DropDownStyle = ComboBoxStyle.DropDownList;
             CbbVersion.FormattingEnabled = true;
-            CbbVersion.Items.AddRange(new object[] { "17.0", "17.1", "17.2" });
             CbbVersion.Location = new Point(287, 32);
             CbbVersion.Name = "CbbVersion";
             CbbVersion.Size = new Size(54, 23);
@@ -167,7 +168,7 @@
             TsmiAbout.Text = "About";
             TsmiAbout.Click += TsMiAbout_Click;
             // 
-            // FMain
+            // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -184,9 +185,9 @@
             Controls.Add(menuStrip);
             MainMenuStrip = menuStrip;
             MaximizeBox = false;
-            Name = "FMain";
+            Name = "Main";
             Text = "Visual Paradigm Keygen";
-            Load += FMain_Load;
+            Load += Main_Load;
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);

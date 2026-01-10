@@ -1,6 +1,6 @@
 ﻿namespace VisualParadigmKeygen
 {
-    partial class FRunAsAdministrator
+    partial class RunAsAdministrator
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,7 @@
             LbNotification.TabIndex = 1;
             LbNotification.Text = "Please run application with administrator";
             // 
-            // FRunAsAdministrator
+            // RunAsAdministrator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -61,7 +61,7 @@
             Controls.Add(BtnExit);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FRunAsAdministrator";
+            Name = "RunAsAdministrator";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Warning";
             ResumeLayout(false);

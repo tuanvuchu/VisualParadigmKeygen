@@ -1,9 +1,10 @@
 ﻿using System.Security.Principal;
+using System.Text.Json;
 using System.Web;
 
 namespace VisualParadigmKeygen
 {
-    public partial class FMain : Form
+    public partial class Main : Form
     {
         private readonly Keygen keygen = new();
         private readonly HostsHelper hostsHelper = new();
@@ -12,24 +13,53 @@ namespace VisualParadigmKeygen
         private string installationId;
         private string email;
         private string name;
-        public FMain()
+
+        private static readonly HttpClient sharedClient = new()
+        {
+            BaseAddress = new Uri("https://raw.githubusercontent.com/"),
+        };
+
+        public Main()
         {
             InitializeComponent();
         }
 
-        private void FMain_Load(object sender, EventArgs e)
+        private async Task GetAsync()
         {
-            FRunAsAdministrator fRunAsAdministrator = new();
+            try
+            {
+                using HttpResponseMessage response = await sharedClient.GetAsync(
+                    "tuanvuchu/VisualParadigmKeygen/refs/heads/main/version.json"
+                );
+                response.EnsureSuccessStatusCode();
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+                var versions = JsonSerializer.Deserialize<List<VersionInfo>>(jsonResponse);
+
+                CbbVersion.DataSource = versions;
+                CbbVersion.DisplayMember = "version";
+                CbbVersion.ValueMember = "build_number";
+            }
+            catch (Exception ex)
+            {
+                TbOutput.Text = ex.Message;
+            }
+        }
+
+        private async void Main_Load(object sender, EventArgs e)
+        {
+            RunAsAdministrator runAsAdministrator = new();
             if (!IsAdministrator())
             {
-                fRunAsAdministrator.ShowDialog();
+                runAsAdministrator.ShowDialog();
                 Application.Exit();
+                return;
             }
+
             hostsHelper.AddToHosts();
             CbbEdition.SelectedIndex = 0;
-            CbbVersion.SelectedIndex = 0;
+            await GetAsync();
         }
-        private void GenerateKey_Click(object sender, EventArgs e)
+        private void BtnGenerateKey_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,12 +92,12 @@ namespace VisualParadigmKeygen
 
         private void TsmiHowToUse_Click(object sender, EventArgs e)
         {
-            FHowToUse fHowToUse = new();
+            HowToUse fHowToUse = new();
             fHowToUse.ShowDialog();
         }
         private void TsMiAbout_Click(object sender, EventArgs e)
         {
-            FAbout fAbout = new();
+            About fAbout = new();
             fAbout.ShowDialog();
         }
 
@@ -85,19 +115,16 @@ namespace VisualParadigmKeygen
                 "Standard" => "Visual Paradigm Standard Edition",
                 "Professional" => "Visual Paradigm Professional Edition",
                 "Enterprise" => "Visual Paradigm Enterprise Edition",
-                _ => "Visual Paradigm Professional Edition",
+                _ => "Visual Paradigm Enterprise Edition",
             };
         }
 
         private void CbbVersion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            build = CbbVersion.Text switch
+            if (CbbVersion.SelectedItem is VersionInfo versionInfo)
             {
-                "17.0" => "20230401",
-                "17.1" => "20240501",
-                "17.2" => "20250321",
-                _ => "20250321",
-            };
+                build = versionInfo.build_number;
+            }
         }
     }
 }

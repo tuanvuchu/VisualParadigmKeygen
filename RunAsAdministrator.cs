@@ -1,8 +1,8 @@
 ﻿namespace VisualParadigmKeygen
 {
-    public partial class FRunAsAdministrator : Form
+    public partial class RunAsAdministrator : Form
     {
-        public FRunAsAdministrator()
+        public RunAsAdministrator()
         {
             InitializeComponent();
         }
