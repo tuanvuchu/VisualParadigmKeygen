@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             LbName = new Label();
             LbDev = new Label();
             LbNotice = new Label();
-            LbFooter = new Label();
+            pbLogo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             SuspendLayout();
             // 
             // LbName
@@ -39,51 +41,54 @@
             LbName.AutoSize = true;
             LbName.Location = new Point(164, 30);
             LbName.Name = "LbName";
-            LbName.Size = new Size(134, 15);
+            LbName.Size = new Size(152, 15);
             LbName.TabIndex = 0;
-            LbName.Text = "Visual Paradigm Keygen";
+            LbName.Text = "Visual Paradigm Keygen 1.1";
             // 
             // LbDev
             // 
             LbDev.AutoSize = true;
             LbDev.Location = new Point(164, 66);
             LbDev.Name = "LbDev";
-            LbDev.Size = new Size(75, 15);
+            LbDev.Size = new Size(146, 30);
             LbDev.TabIndex = 1;
-            LbDev.Text = "Chu Tuan Vu";
+            LbDev.Text = "Copyright © 2024-2026 by\r\nChu Tuan Vu";
             // 
             // LbNotice
             // 
             LbNotice.AutoSize = true;
             LbNotice.Location = new Point(6, 127);
             LbNotice.Name = "LbNotice";
-            LbNotice.Size = new Size(316, 30);
+            LbNotice.Size = new Size(316, 75);
             LbNotice.TabIndex = 2;
-            LbNotice.Text = "Using Keygens (key generators) is considered a violation of\r\nsoftware licensing laws and constitutes software piracy.\r\n";
+            LbNotice.Text = resources.GetString("LbNotice.Text");
             // 
-            // LbFooter
+            // pbLogo
             // 
-            LbFooter.AutoSize = true;
-            LbFooter.Location = new Point(138, 277);
-            LbFooter.Name = "LbFooter";
-            LbFooter.Size = new Size(0, 15);
-            LbFooter.TabIndex = 3;
+            pbLogo.Image = Properties.Resources.logo;
+            pbLogo.Location = new Point(41, 30);
+            pbLogo.Name = "pbLogo";
+            pbLogo.Size = new Size(75, 75);
+            pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbLogo.TabIndex = 3;
+            pbLogo.TabStop = false;
             // 
             // About
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(334, 311);
-            Controls.Add(LbFooter);
+            ClientSize = new Size(334, 211);
+            Controls.Add(pbLogo);
             Controls.Add(LbNotice);
             Controls.Add(LbDev);
             Controls.Add(LbName);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "About";
             StartPosition = FormStartPosition.CenterParent;
             Text = "About";
-            Load += FAbout_Load;
+            ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -93,6 +98,6 @@
         private Label LbName;
         private Label LbDev;
         private Label LbNotice;
-        private Label LbFooter;
+        private PictureBox pbLogo;
     }
 }

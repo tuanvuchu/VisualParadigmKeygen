@@ -90,11 +90,6 @@ namespace VisualParadigmKeygen
             }
         }
 
-        private void TsmiHowToUse_Click(object sender, EventArgs e)
-        {
-            HowToUse fHowToUse = new();
-            fHowToUse.ShowDialog();
-        }
         private void TsMiAbout_Click(object sender, EventArgs e)
         {
             About fAbout = new();
@@ -125,6 +120,12 @@ namespace VisualParadigmKeygen
             {
                 build = versionInfo.build_number;
             }
+        }
+
+        private void RestoreHostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hostsHelper.RemoveFromHosts();
+            MessageBox.Show("The hosts file has been successfully restored.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

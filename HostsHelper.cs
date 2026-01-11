@@ -34,7 +34,6 @@
                 return false;
             }
         }
-
         public bool RemoveFromHosts()
         {
             try

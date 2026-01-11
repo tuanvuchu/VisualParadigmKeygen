@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             CbbEdition = new ComboBox();
             BtnGenerateKey = new Button();
             TbOutput = new TextBox();
@@ -39,8 +40,8 @@
             LbOutput = new Label();
             menuStrip = new MenuStrip();
             TsmiHelp = new ToolStripMenuItem();
-            TsmiHowToUse = new ToolStripMenuItem();
             TsmiAbout = new ToolStripMenuItem();
+            restoreHostToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -149,24 +150,24 @@
             // 
             // TsmiHelp
             // 
-            TsmiHelp.DropDownItems.AddRange(new ToolStripItem[] { TsmiHowToUse, TsmiAbout });
+            TsmiHelp.DropDownItems.AddRange(new ToolStripItem[] { TsmiAbout, restoreHostToolStripMenuItem });
             TsmiHelp.Name = "TsmiHelp";
             TsmiHelp.Size = new Size(44, 20);
             TsmiHelp.Text = "Help";
             // 
-            // TsmiHowToUse
-            // 
-            TsmiHowToUse.Name = "TsmiHowToUse";
-            TsmiHowToUse.Size = new Size(134, 22);
-            TsmiHowToUse.Text = "How to use";
-            TsmiHowToUse.Click += TsmiHowToUse_Click;
-            // 
             // TsmiAbout
             // 
             TsmiAbout.Name = "TsmiAbout";
-            TsmiAbout.Size = new Size(134, 22);
+            TsmiAbout.Size = new Size(141, 22);
             TsmiAbout.Text = "About";
             TsmiAbout.Click += TsMiAbout_Click;
+            // 
+            // restoreHostToolStripMenuItem
+            // 
+            restoreHostToolStripMenuItem.Name = "restoreHostToolStripMenuItem";
+            restoreHostToolStripMenuItem.Size = new Size(141, 22);
+            restoreHostToolStripMenuItem.Text = "Restore Host";
+            restoreHostToolStripMenuItem.Click += RestoreHostToolStripMenuItem_Click;
             // 
             // Main
             // 
@@ -183,9 +184,11 @@
             Controls.Add(BtnGenerateKey);
             Controls.Add(CbbEdition);
             Controls.Add(menuStrip);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip;
             MaximizeBox = false;
             Name = "Main";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Visual Paradigm Keygen";
             Load += Main_Load;
             menuStrip.ResumeLayout(false);
@@ -207,7 +210,7 @@
         private Label LbOutput;
         private MenuStrip menuStrip;
         private ToolStripMenuItem TsmiHelp;
-        private ToolStripMenuItem TsmiHowToUse;
         private ToolStripMenuItem TsmiAbout;
+        private ToolStripMenuItem restoreHostToolStripMenuItem;
     }
 }
