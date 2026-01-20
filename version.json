@@ -14,5 +14,9 @@
   {
     "version": "17.3",
     "build_number": "20260101"
+  },
+  {
+    "version": "18.0",
+    "build_number": "20260116"
   }
 ]
