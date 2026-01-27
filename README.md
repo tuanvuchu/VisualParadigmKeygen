@@ -93,11 +93,6 @@ We welcome contributions! If you have suggestions for improvements or encounter 
 5.  Commit your changes and push to your fork.
 6.  Create a pull request to the `main` branch of the original repository.
 
-## 🙏 Acknowledgments
-
-- This project utilizes the core functionalities provided by the **.NET Framework** and **Windows Forms** for its desktop interface.
-- Special thanks to the open-source community for the tools and knowledge that make projects like this possible.
-
 ## 📞 Support & Contact
 
 - 🐛 Issues: [GitHub Issues](https://github.com/tuanvuchu/VisualParadigmKeygen/issues)
