@@ -95,11 +95,6 @@ Chúng tôi luôn hoan nghênh các đóng góp! Nếu bạn có gợi ý cải 
 5. Commit các thay đổi và push lên bản fork của bạn.
 6. Tạo pull request tới nhánh `main` của kho lưu trữ gốc.
 
-## 🙏 Lời cảm ơn
-
-- Dự án này sử dụng các chức năng cốt lõi được cung cấp bởi **.NET Framework** và **Windows Forms**.
-- Đặc biệt cảm ơn cộng đồng mã nguồn mở vì các công cụ và kiến thức đã giúp dự án này có thể thực hiện được.
-
 ## 📞 Hỗ trợ & Liên hệ
 
 - 🐛 Vấn đề (Issues): [GitHub Issues](https://github.com/tuanvuchu/VisualParadigmKeygen/issues)
